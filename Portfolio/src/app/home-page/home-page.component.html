@@ -1,10 +1,33 @@
 <mat-drawer-container class="example-container" autosize style="background-color: black">
   <mat-drawer #drawer class="example-sidenav" mode="side" style="background-color: black">
-    <p>Navigate to element</p>
     <p>Navigate to id</p>
+    <mat-vertical-stepper class="stepper" #stepper [animationDuration]="'2000'">
+      <mat-step>
+        <ng-template matStepLabel style="color: white">Home</ng-template>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>About</ng-template>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Projects</ng-template>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Skills</ng-template>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Contact</ng-template>
+      </mat-step>
+
+
+    </mat-vertical-stepper>
   </mat-drawer>
 
   <div class="example-sidenav-content">
+    <div class="image-placement">
+      <img class="animate-image" src="assets/giga-removebg-preview.png">
+    </div>
     <div class="btn-placement">
       <button class="open-drawer-btn" (click)="drawer.toggle()">Navigate</button>
     </div>
