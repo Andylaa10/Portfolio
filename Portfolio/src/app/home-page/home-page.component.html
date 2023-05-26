@@ -1,0 +1,12 @@
+<mat-drawer-container class="example-container" autosize style="background-color: black">
+  <mat-drawer #drawer class="example-sidenav" mode="side" style="background-color: black">
+    <p>Navigate to element</p>
+    <p>A ref navigate to id</p>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <div class="btn-placement">
+      <button class="open-drawer-btn" (click)="drawer.toggle()">Navigate</button>
+    </div>
+  </div>
+</mat-drawer-container>
