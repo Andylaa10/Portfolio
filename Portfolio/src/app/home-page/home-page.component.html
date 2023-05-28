@@ -2,22 +2,38 @@
   <mat-drawer #drawer class="example-sidenav" mode="side" style="background-color: black">
     <p>Navigate to id</p>
     <mat-vertical-stepper class="stepper" #stepper [animationDuration]="'2000'">
-      <mat-step>
-        <ng-template matStepLabel style="color: white">Home</ng-template>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>About</ng-template>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>Projects</ng-template>
+
+      <mat-step matTooltip="Info about the action" matTooltipPosition="after">
+        <ng-template matStepperIcon="home">
+          <mat-icon>home</mat-icon>
+        </ng-template>
+        <ng-template matStepLabel>
+          <div class="stepper-label">Home</div>
+        </ng-template>
       </mat-step>
 
       <mat-step>
-        <ng-template matStepLabel>Skills</ng-template>
+        <ng-template matStepLabel>
+          <div class="stepper-label">About</div>
+        </ng-template>
       </mat-step>
 
       <mat-step>
-        <ng-template matStepLabel>Contact</ng-template>
+        <ng-template matStepLabel>
+          <div class="stepper-label">Projects</div>
+        </ng-template>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>
+          <div class="stepper-label">Skills</div>
+        </ng-template>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>
+          <div class="stepper-label">Contact</div>
+        </ng-template>
       </mat-step>
 
 

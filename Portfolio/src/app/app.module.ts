@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {NgOptimizedImage} from "@angular/common";
 import {MatStepperModule} from "@angular/material/stepper";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {MatStepperModule} from "@angular/material/stepper";
     BrowserAnimationsModule,
     MatSidenavModule,
     NgOptimizedImage,
-    MatStepperModule
+    MatStepperModule,
+    MatTooltipModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
