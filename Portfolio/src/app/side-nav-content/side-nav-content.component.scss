@@ -1,0 +1,36 @@
+.icon-container {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 3rem;
+  transition: background-color 0.3s ease;
+}
+
+.hover-icon {
+  transform: scale(2);
+  cursor: pointer;
+  color: #8181ee;
+  transition: color 2s;
+}
+
+.hover-text {
+  display: none;
+  margin-left: 10px;
+  color: black;
+  transition: color 2s;
+  font-family: 'Pacifico', cursive;
+}
+
+
+.icon-container:hover .hover-text {
+  display: inline-block;
+  color: white;
+  font-size: 1.5rem;
+  transition: color 2s;
+  padding-right: 16px;
+
+}
+
+.icon-container:hover .hover-icon {
+  color: white;
+  transition: color 2s;
+}

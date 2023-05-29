@@ -1,51 +1,60 @@
 <mat-drawer-container class="example-container" autosize style="background-color: black">
   <mat-drawer #drawer class="example-sidenav" mode="side" style="background-color: black">
-    <p>Navigate to id</p>
-    <mat-vertical-stepper class="stepper" #stepper [animationDuration]="'2000'">
-
-      <mat-step matTooltip="Info about the action" matTooltipPosition="after">
-        <ng-template matStepperIcon="home">
-          <mat-icon>home</mat-icon>
-        </ng-template>
-        <ng-template matStepLabel>
-          <div class="stepper-label">Home</div>
-        </ng-template>
-      </mat-step>
-
-      <mat-step>
-        <ng-template matStepLabel>
-          <div class="stepper-label">About</div>
-        </ng-template>
-      </mat-step>
-
-      <mat-step>
-        <ng-template matStepLabel>
-          <div class="stepper-label">Projects</div>
-        </ng-template>
-      </mat-step>
-
-      <mat-step>
-        <ng-template matStepLabel>
-          <div class="stepper-label">Skills</div>
-        </ng-template>
-      </mat-step>
-
-      <mat-step>
-        <ng-template matStepLabel>
-          <div class="stepper-label">Contact</div>
-        </ng-template>
-      </mat-step>
-
-
-    </mat-vertical-stepper>
+    <app-side-nav-content></app-side-nav-content>
   </mat-drawer>
 
-  <div class="example-sidenav-content">
+  <div id="Home" class="example-sidenav-content">
     <div class="image-placement">
       <img class="animate-image" src="assets/giga-removebg-preview.png">
     </div>
+    <div class="descriptionPlacement-1">
+      <p class="descriptionContent">
+        Hi, my name is <span class="highlight">Andy Lam Nguyen</span>
+      </p>
+    </div>
+
+    <div class="descriptionPlacement-2">
+      <p class="descriptionContent">
+        I'm a <span class="highlight">Full Stack Developer</span> from Denmark
+      </p>
+    </div>
+
+    <div class="descriptionPlacement-3">
+      <p class="descriptionContent">
+        Eager to learn!
+      </p>
+    </div>
+
+
     <div class="btn-placement">
-      <button class="open-drawer-btn" (click)="drawer.toggle()">Navigate</button>
+      <div *ngIf="close;else open">
+        <button class="open-drawer-btn" (click)="drawer.toggle(); toggleClose()" matTooltip="Click to navigate">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <ng-template #open>
+        <button class="open-drawer-btn" (click)="drawer.toggle(); toggleClose()" matTooltip="Click to navigate">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </ng-template>
     </div>
   </div>
+
+  <div class="newComponent">
+    <app-about id="About"></app-about>
+  </div>
+
+  <div class="newComponent">
+    <app-projects id="Projects"></app-projects>
+  </div>
+
+  <div class="newComponent">
+    <app-skills id="Skills"></app-skills>
+  </div>
+
+  <div class="newComponent">
+    <app-contact id="Contact"></app-contact>
+  </div>
+
 </mat-drawer-container>
+

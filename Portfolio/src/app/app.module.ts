@@ -10,11 +10,23 @@ import {NgOptimizedImage} from "@angular/common";
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import { SideNavContentComponent } from './side-nav-content/side-nav-content.component';
+import { AboutComponent } from './about/about.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { SkillsComponent } from './skills/skills.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent
+    HomePageComponent,
+    SideNavContentComponent,
+    AboutComponent,
+    ProjectsComponent,
+    SkillsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +36,9 @@ import {MatIconModule} from "@angular/material/icon";
     NgOptimizedImage,
     MatStepperModule,
     MatTooltipModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

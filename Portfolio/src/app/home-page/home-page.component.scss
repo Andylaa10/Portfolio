@@ -23,16 +23,67 @@
   color: #8181ee;
 }
 
+.image-placement {
+  position: absolute;
+  top: 10%;
+  visibility: hidden;
+  animation: fadeIn 8s;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+
+}
+
+.animate-image {
+  border: 2px solid #8181ee;
+  height: 20em;
+  width: 20em;
+  animation: border-animation 20s infinite alternate ease-in-out;
+  -moz-animation: border-animation 20s infinite alternate ease-in-out;
+}
+
+.descriptionPlacement-1 {
+  position: absolute;
+  top: 55%;
+}
+
+.descriptionPlacement-2 {
+  position: absolute;
+  top: 62%;
+}
+
+.descriptionPlacement-3 {
+  position: absolute;
+  top: 69%;
+}
+
+.descriptionContent {
+  color: white;
+  font-size: 2rem;
+  font-family: 'Courgette', cursive;
+  box-shadow: 10px 10px 123px 0px rgba(46, 91, 173, 0.75);
+  animation: fadeIn 8s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  visibility: hidden;
+}
+
+.highlight {
+  color: #8181ee;
+  font-size: 2.2rem;
+}
+
 .open-drawer-btn {
   border: 1px solid #8181ee;
   border-radius: 5px;
   color: #8181ee;
   background-color: black;
-  height: 2.5rem;
-  width: 8rem;
+  height: 2rem;
+  width: 2rem;
   box-shadow: 2px 4px 4px rgba(46, 91, 173, 0.6);
   transition: background-color 2s, box-shadow 1s;
-
+  visibility: hidden;
+  animation: fadeIn 4s;
+  animation-fill-mode: forwards;
 }
 
 .open-drawer-btn:hover {
@@ -40,31 +91,21 @@
   color: white;
   transition: background-color 3s, box-shadow 2s;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
-
+  border-color: white;
 }
 
 .btn-placement {
   position: fixed;
-  top: 90%;
+  top: 5%;
+  right: 5%;
 }
 
-.stepper {
+.newComponent {
+  position: relative;
+  top: 20%;
+  height: 60%;
+  width: 100%;
   background-color: black;
-}
-
-.stepper-label{
-  color: white;
-}
-
-.image-placement {
-
-}
-
-.animate-image {
-  height: 18.75em;
-  width: 18.75em;
-  animation: border-animation 20s infinite alternate ease-in-out;
-  -moz-animation: border-animation 20s infinite alternate ease-in-out;
 }
 
 /**
@@ -91,7 +132,7 @@
   }
 
   60% {
-    border-radius: 132px 137px 36px 171px;
+    border-radius: 20px 137px 36px 171px;
     -webkit-border-radius: 132px 137px 36px 171px;
     -moz-border-radius: 132px 137px 36px 171px;
   }
@@ -107,5 +148,18 @@
     -webkit-border-radius: 13px 178px 60px 169px;
     -moz-border-radius: 13px 178px 60px 169px;
   }
-
 }
+
+/**
+ Delaying spawn
+ */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
