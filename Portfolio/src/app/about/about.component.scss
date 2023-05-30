@@ -1,9 +1,46 @@
-.headerPlacement{
+
+.headerPlacement {
   position: absolute;
   top: 20%;
-  left: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
-.headerPlacement>h1 {
+.headerPlacement > span {
+  color: #8181ee;
+  font-size: 3rem;
+  font-family: 'Pacifico', cursive;
+}
+
+.bodyPlacement {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3em;
+  height: 25em;
+}
+
+.grid-child {
+  width: 31.25em;
+}
+
+.grid-child > p {
+  font-size: 1.2rem;
+  color: white;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-align: left;
+}
+
+p > span {
   color: #8181ee;
 }
+

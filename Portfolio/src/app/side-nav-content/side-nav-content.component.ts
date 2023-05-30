@@ -8,11 +8,14 @@ import {sidenavContent} from "./sidenav-content";
 })
 export class SideNavContentComponent {
 
+  //TODO When press on one of the sideContents close drawer
+  //TODO RESPONSIVE
+
   navigation:sidenavContent[] = [
     new sidenavContent('Home', 'home'),
     new sidenavContent('About', 'face'),
-    new sidenavContent('Projects', 'work'),
     new sidenavContent('Skills', 'poll'),
+    new sidenavContent('Projects', 'work'),
     new sidenavContent('Contact', 'mail'),
   ];
 

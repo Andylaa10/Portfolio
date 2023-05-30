@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
+
+  //TODO RESPONSIVE
+  //TODO CREATE component for quotes
   close: boolean = false;
 
   toggleClose(){
