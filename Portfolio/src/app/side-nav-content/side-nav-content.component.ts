@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {sidenavContent} from "./sidenav-content";
 
 @Component({
@@ -10,6 +10,14 @@ export class SideNavContentComponent {
 
   //TODO When press on one of the sideContents close drawer
   //TODO RESPONSIVE
+
+  // Use to close the drawer in parent
+  @Input() drawer: any;
+  @Output() close: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  changeIconFromChild(close: boolean){
+    this.close.emit(close);
+  }
 
   navigation:sidenavContent[] = [
     new sidenavContent('Home', 'home'),

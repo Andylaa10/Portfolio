@@ -1,5 +1,5 @@
 <div *ngFor="let nav of navigation">
-  <div class="icon-container" (click)="selectPage(nav.name);">
+  <div class="icon-container" (click)="selectPage(nav.name); drawer.toggle(); changeIconFromChild(true)">
     <mat-icon class="hover-icon">{{nav.icon}}</mat-icon>
     <br>
     <span class="hover-text">{{nav.name}}</span>

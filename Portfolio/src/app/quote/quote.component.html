@@ -1,0 +1,16 @@
+<div class="centerAll" *ngIf="quoteService.quotes; else error">
+  <div class="content">
+    <h1>
+      {{quoteService.quotes[index].content}}
+      <br>
+      <br>
+      <br>
+      <span class="author">-{{quoteService.quotes[index].author}}</span>
+    </h1>
+  </div>
+</div>
+
+<ng-template class="centerAll" #error>
+  <h1 class="head1">Data not found</h1>
+</ng-template>
+

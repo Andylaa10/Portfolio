@@ -1,6 +1,6 @@
 <mat-drawer-container class="example-container" autosize style="background-color: black">
   <mat-drawer #drawer class="example-sidenav" mode="side" style="background-color: black">
-    <app-side-nav-content></app-side-nav-content>
+    <app-side-nav-content [drawer]="drawer" (dataEvent)="toggleFromChild($event)"></app-side-nav-content>
   </mat-drawer>
 
   <div id="Home" class="example-sidenav-content">
@@ -8,21 +8,27 @@
       <img class="animate-image" src="assets/giga-removebg-preview.png">
     </div>
     <div class="descriptionPlacement-1">
-      <p class="descriptionContent">
-        Hi, my name is <span class="highlight">Andy Lam Nguyen</span>
-      </p>
+      <div class="shadow">
+        <p class="descriptionContent">
+          Hi, my name is <span class="highlight">Andy Lam Nguyen</span>
+        </p>
+        <br>
+        <p class="descriptionContent">
+          I'm a <span class="highlight">Full Stack Developer</span> from Denmark
+        </p>
+        <br>
+        <p class="descriptionContent">
+          Eager to learn!
+        </p>
+      </div>
     </div>
 
     <div class="descriptionPlacement-2">
-      <p class="descriptionContent">
-        I'm a <span class="highlight">Full Stack Developer</span> from Denmark
-      </p>
+
     </div>
 
     <div class="descriptionPlacement-3">
-      <p class="descriptionContent">
-        Eager to learn!
-      </p>
+
     </div>
 
 
@@ -44,12 +50,24 @@
     <app-about id="About"></app-about>
   </div>
 
+  <div class="quoteComponent">
+    <app-quote [index]="0"></app-quote>
+  </div>
+
   <div class="newComponent">
     <app-skills id="Skills"></app-skills>
   </div>
 
+  <div class="quoteComponent">
+    <app-quote [index]="1"></app-quote>
+  </div>
+
   <div class="newComponent">
     <app-projects id="Projects"></app-projects>
+  </div>
+
+  <div class="quoteComponent">
+    <app-quote [index]="2"></app-quote>
   </div>
 
   <div class="newComponent">

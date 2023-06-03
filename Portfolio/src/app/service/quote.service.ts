@@ -9,11 +9,14 @@ export class QuoteService {
 
 
   quotes: Quote[] = [];
-  constructor() { }
+  constructor() {
+    this.getRandomQuotes();
+    console.log(this.quotes)
+  }
 
-  // Get 5 random quotes from the api and pushes them into my array of quotes
-  getFiveRandomQuotes(){
-    axios.get('https://api.quotable.io/quotes/random?limit=5').then(response => {
+  // Get 3 random quotes from the api and pushes them into my array of quotes
+   getRandomQuotes(){
+     axios.get('https://api.quotable.io/quotes/random?limit=3').then(response => {
       if(response.status == 200){
         for (let i = 0; i < response.data.length; i++) {
           this.quotes.push({
