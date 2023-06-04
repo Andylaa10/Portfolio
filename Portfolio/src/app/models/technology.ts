@@ -2,17 +2,14 @@ import firebase from 'firebase/compat/app';
 
 export class TechnologyKeys{
   static technology = 'Technology';
-  static skillId = 'skillId';
   static skillIcon = 'skillIcon';
   static skillName = 'skillName';
 }
 export class Technology{
-   skillId: string;
    skillIcon: string;
    skillName: string;
 
-   constructor(skillId: string, skillIcon: string, skillName: string) {
-     this.skillId = skillId;
+   constructor(skillIcon: string, skillName: string) {
      this.skillName = skillName;
      this.skillIcon = skillIcon;
    }
@@ -38,7 +35,6 @@ export class TechnologyConverter implements DataConverter<Technology>{
 
   toFirestore(technology: Technology): DocumentData  {
     return {
-      skillId: technology.skillId,
       skillName: technology.skillName,
       skillIcon: technology.skillIcon,
     }

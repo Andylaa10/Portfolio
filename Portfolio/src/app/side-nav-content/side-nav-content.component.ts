@@ -8,12 +8,13 @@ import {sidenavContent} from "./sidenav-content";
 })
 export class SideNavContentComponent {
 
-  //TODO When press on one of the sideContents close drawer
   //TODO RESPONSIVE
 
   // Use to close the drawer in parent
   @Input() drawer: any;
-  @Output() close: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  // Use to change icon in parent
+  @Output() close: EventEmitter<any> = new EventEmitter();
 
   changeIconFromChild(close: boolean){
     this.close.emit(close);

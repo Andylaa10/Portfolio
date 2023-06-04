@@ -3,17 +3,14 @@ import firebase from 'firebase/compat/app';
 
 export class ProjectKeys{
   static project = 'Project';
-  static projectId = 'projectId';
   static projectName = 'projectName';
   static technologies = 'technologies';
 }
 export class Project{
-  projectId: string;
   projectName: string;
   technologies: Technology[];
 
-  constructor(projectId: string, projectName: string, technologies: Technology[]) {
-    this.projectId = projectId;
+  constructor(projectName: string, technologies: Technology[]) {
     this.projectName = projectName;
     this.technologies = technologies;
   }
@@ -39,7 +36,6 @@ export class ProjectConverter implements DataConverter<Project>{
 
   toFirestore(project: Project): DocumentData  {
     return {
-      projectId: project.projectId,
       projectName: project.projectName,
       technologies: project.technologies,
     }

@@ -1,0 +1,65 @@
+.header{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+span{
+  position: relative;
+  display: inline-block;
+  color: #8181ee;
+  font-size: 3rem;
+  font-family: 'Pacifico', cursive;
+  word-wrap: break-word;
+  line-height: 1.5;
+  letter-spacing: 10px;
+  animation: wave 2s infinite;
+  animation-delay: calc(.1s * var(--i));
+}
+
+.example-card {
+  width: 8em;
+  height: 8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+  background-size: 200% 200%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.example-card:hover{
+  border-color: #8181ee;
+  background-position: 100%;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  .skillName{
+    color: #8181ee;
+  }
+}
+
+.skillIcon {
+  height: 4.8em;
+  width: 4.8em;
+}
+
+.skillName {
+  color: white;
+  text-align: center;
+  font-family: 'Courgette', cursive;
+}
+
+@keyframes wave {
+  0%, 40%, 100%{
+    transform: translateY(0);
+  }
+
+  20%{
+    transform: translateY(-70px);
+  }
+}

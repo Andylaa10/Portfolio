@@ -11,7 +11,6 @@ export class QuoteService {
   quotes: Quote[] = [];
   constructor() {
     this.getRandomQuotes();
-    console.log(this.quotes)
   }
 
   // Get 3 random quotes from the api and pushes them into my array of quotes

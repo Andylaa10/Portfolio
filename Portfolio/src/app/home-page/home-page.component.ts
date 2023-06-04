@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FireService} from "../service/fire.service";
 import {QuoteService} from "../service/quote.service";
-import {Quote} from "../models/quote";
 
 @Component({
   selector: 'app-home-page',
@@ -17,19 +16,15 @@ export class HomePageComponent implements OnInit {
   }
 
   async ngOnInit() {
-    //await this.fireService.getSkills();
     //await this.fireService.getProjects();
-    //console.log(this.fireService.technologies);
     //console.log(this.fireService.projects);
   }
 
   toggleClose() {
     this.close = !this.close;
   }
-
-  //TODO Change icon when press on sidenav content
   toggleFromChild(data: any){
-    this.close = !this.close;
+    this.close = !data;
   }
 
 }

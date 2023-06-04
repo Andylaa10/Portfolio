@@ -1,6 +1,6 @@
 <mat-drawer-container class="example-container" autosize style="background-color: black">
   <mat-drawer #drawer class="example-sidenav" mode="side" style="background-color: black">
-    <app-side-nav-content [drawer]="drawer" (dataEvent)="toggleFromChild($event)"></app-side-nav-content>
+    <app-side-nav-content [drawer]="drawer" (close)="toggleFromChild($event)"></app-side-nav-content>
   </mat-drawer>
 
   <div id="Home" class="example-sidenav-content">

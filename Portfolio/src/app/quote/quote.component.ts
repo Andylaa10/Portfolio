@@ -14,8 +14,6 @@ export class QuoteComponent implements OnInit{
   }
 
   ngOnInit() {
-    console.log(this.index);
-    // You can now use the 'index' property in other operations or call methods.
   }
 
 
