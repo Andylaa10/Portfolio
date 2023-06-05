@@ -8,7 +8,7 @@
   <span style="--i:7">l</span>
   <span style="--i:8">s</span>
 </div>
-<mat-grid-list cols="10" rowHeight="1:1" gutterSize="10px" style=" width: 100%; position: absolute; top: 40%">
+<mat-grid-list [cols]="getGridColumns()" rowHeight="1:1" style=" width: 100%; position: absolute; top: 40%">
   <mat-grid-tile *ngFor="let skill of skills">
     <mat-card class="example-card">
       <mat-card-header>

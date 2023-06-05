@@ -1,9 +1,58 @@
-<form class="contact-form" (submit)="sendEmail($event)">
-  <label>Name</label>
-  <input type="text" name="user_name">
-  <label>Email</label>
-  <input type="email" name="user_email">
-  <label>Message</label>
-  <textarea name="message"></textarea>
-  <input type="submit" value="Send">
-</form>
+<div class="centerAll">
+  <div class="headerPlacement">
+    <span style="--i:1">C</span>
+    <span style="--i:2">o</span>
+    <span style="--i:3">n</span>
+    <span style="--i:4">t</span>
+    <span style="--i:5">a</span>
+    <span style="--i:6">c</span>
+    <span style="--i:7">t&nbsp;</span>
+    <span style="--i:8">M</span>
+    <span style="--i:9">e</span>
+  </div>
+
+  <form class="formPlacement" (ngSubmit)="sendEmail()" [formGroup]="emailGroup">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput placeholder="Peter" formControlName="nameControl">
+        <mat-icon matPrefix>person</mat-icon>
+        <mat-error *ngIf="this.emailGroup.controls.nameControl.hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="Email" formControlName="emailControl">
+        <mat-icon matPrefix>contact_mail</mat-icon>
+        <mat-error *ngIf="this.emailGroup.controls.emailControl.hasError('email')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="this.emailGroup.controls.emailControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Leave a message</mat-label>
+        <textarea matInput placeholder="Hallo big boy..." formControlName="messageControl" type="text"></textarea>
+        <mat-icon matPrefix>mail</mat-icon>
+        <mat-error *ngIf="this.emailGroup.controls.messageControl.hasError('required')">
+          Message content is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button [disabled]="!this.emailGroup.valid" type="submit" matTooltip="Click to send mail">
+        <span>Send mail</span>
+      </button>
+    </div>
+
+  </form>
+</div>

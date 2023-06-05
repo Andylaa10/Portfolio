@@ -1,13 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {FireService} from "../service/fire.service";
 import {Technology} from "../models/technology";
+import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent implements OnInit{
+export class SkillsComponent implements OnInit {
 
   skills: Technology[] = [
     new Technology('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg', 'Scss'),
@@ -28,9 +29,22 @@ export class SkillsComponent implements OnInit{
     new Technology('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', 'MySQL'),
   ];
 
-  constructor(public fireService: FireService) {
+  constructor(public fireService: FireService, private breakpointObserver: BreakpointObserver) {
   }
+
   async ngOnInit() {
+  }
+
+  getGridColumns(): number {
+    if (this.breakpointObserver.isMatched(Breakpoints.HandsetPortrait)) {
+      return 4; // 1 column for small screens
+    } else if (this.breakpointObserver.isMatched(Breakpoints.TabletPortrait)) {
+      return 6; // 2 columns for tablet screens
+    } else if (this.breakpointObserver.isMatched(Breakpoints.Medium)) {
+      return 8; // 3 columns for larger screens
+    } else {
+      return 10;
+    }
   }
 
   //TODO RESPONSIVE

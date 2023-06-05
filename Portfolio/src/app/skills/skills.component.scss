@@ -19,8 +19,8 @@ span{
 }
 
 .example-card {
-  width: 8em;
-  height: 8em;
+  width: 6em;
+  height: 5.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,14 +44,15 @@ span{
 }
 
 .skillIcon {
-  height: 4.8em;
-  width: 4.8em;
+  height: 2em;
+  width: 2em;
 }
 
 .skillName {
   color: white;
   text-align: center;
   font-family: 'Courgette', cursive;
+  font-size: 1em;
 }
 
 @keyframes wave {

@@ -19,6 +19,9 @@ import { ContactComponent } from './contact/contact.component';
 import { QuoteComponent } from './quote/quote.component';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule} from "@angular/material/card";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatButtonModule} from "@angular/material/button";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -31,21 +34,25 @@ import {MatCardModule} from "@angular/material/card";
     ContactComponent,
     QuoteComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    NgOptimizedImage,
-    MatStepperModule,
-    MatTooltipModule,
-    MatIconModule,
-    MatInputModule,
-    MatSelectModule,
-    MatGridListModule,
-    MatCardModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        NgOptimizedImage,
+        MatStepperModule,
+        MatTooltipModule,
+        MatIconModule,
+        MatInputModule,
+        MatSelectModule,
+        MatGridListModule,
+        MatCardModule,
+        ReactiveFormsModule,
+        MatButtonModule
+    ],
+  providers: [
+    MatSnackBar,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
